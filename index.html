@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoAgro Brasil - Soluções Sustentáveis para Agricultura</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2E7D32;
+            --primary-dark: #1B5E20;
+            --primary-light: #4CAF50;
+            --secondary: #8D6E63;
+            --accent: #FF9800;
+            --light: #F5F5F5;
+            --dark: #333;
+            --text: #424242;
+            --background: #F9F6F0;
+            --card: #FFFFFF;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Acessibilidade - Alto Contraste */
+        .high-contrast {
+            --primary: #000000;
+            --primary-dark: #000000;
+            --primary-light: #333333;
+            --secondary: #666666;
+            --accent: #FFFF00;
+            --light: #FFFFFF;
+            --dark: #000000;
+            --text: #000000;
+            --background: #FFFFFF;
+            --card: #FFFFFF;
+            --shadow: rgba(0, 0, 0, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        /* Acessibilidade - Aumentar Fonte */
+        body.large-text {
+            font-size: 120%;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--shadow);
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background-color: #F57C00;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .accessibility-tools {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+
+        .accessibility-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .accessibility-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background-color: var(--card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px var(--shadow);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 5rem 0;
+        }
+
+        .products-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: var(--light);
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px var(--shadow);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px var(--shadow);
+        }
+
+        .product-img {
+            height: 200px;
+            background-color: #f0f0f0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px var(--shadow);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Sustainability Section */
+        .sustainability {
+            padding: 5rem 0;
+            background: linear-gradient(to bottom, var(--primary-light), var(--primary-dark));
+            color: white;
+            text-align: center;
+        }
+
+        .sustainability h2 {
+            color: white;
+        }
+
+        .sustainability h2::after {
+            background-color: var(--accent);
+        }
+
+        .sustainability-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 2rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-col h3::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-img {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--primary-dark);
+                width: 100%;
+                text-align: center;
+                padding: 2rem 0;
+                transition: var(--transition);
+                z-index: 99;
+            }
+
+            nav ul.active {
+                left: 0;
+            }
+
+            .accessibility-tools {
+                margin-left: auto;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-actions {
+                flex-direction: column;
+            }
+
+            .hero {
+                height: 70vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-leaf logo-icon"></i>
+                <div class="logo-text">Eco<span>Agro</span> Brasil</div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <div class="accessibility-tools">
+                <button class="accessibility-btn" id="contrastBtn" title="Alto Contraste">
+                    <i class="fas fa-adjust"></i>
+                </button>
+                <button class="accessibility-btn" id="fontSizeBtn" title="Aumentar Texto">
+                    <i class="fas fa-text-height"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container hero-content">
+            <h1>Soluções Sustentáveis para Agricultura Moderna</h1>
+            <p>Na EcoAgro Brasil, unimos tecnologia e sustentabilidade para oferecer os melhores equipamentos agrícolas com responsabilidade ambiental.</p>
+            <div class="hero-buttons">
+                <a href="#produtos" class="btn btn-accent">Ver Produtos</a>
+                <a href="#contato" class="btn btn-outline">Fale Conosco</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Nossas Soluções</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-tractor feature-icon"></i>
+                    <h3>Tratores Ecológicos</h3>
+                    <p>Máquinas de alta performance com baixo consumo de combustível e emissões reduzidas.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tint feature-icon"></i>
+                    <h3>Sistemas de Irrigação</h3>
+                    <p>Tecnologia inteligente para uso eficiente de água em qualquer tipo de cultura.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-seedling feature-icon"></i>
+                    <h3>Plantio Sustentável</h3>
+                    <p>Equipamentos que otimizam o plantio com mínimo impacto ambiental.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-haykal feature-icon"></i>
+                    <h3>Colheita Responsável</h3>
+                    <p>Máquinas de colheita que preservam o solo e reduzem desperdícios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="produtos">
+        <div class="container">
+            <h2>Nossos Produtos</h2>
+            <div class="products-filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="tratores">Tratores</button>
+                <button class="filter-btn" data-filter="irrigacao">Irrigação</button>
+                <button class="filter-btn" data-filter="plantio">Plantio</button>
+                <button class="filter-btn" data-filter="colheita">Colheita</button>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-category="tratores">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1605553041888-8c0a8f4b5d9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Trator EcoPower 450</h3>
+                        <p>Trator de alta eficiência com motor biodiesel e sistema de economia de combustível.</p>
+                        <div class="product-price">R$ 245.900,00</div>
+                        <div class="product-actions">
+                            <button class="btn">Comprar</button>
+                            <button class="btn btn-outline">Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="irrigacao">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1586771107445-d3ca888129fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Sistema IrrigaSmart</h3>
+                        <p>Sistema de irrigação inteligente com sensores de umidade e controle por aplicativo.</p>
+                        <div class="product-price">R$ 87.500,00</div>
+                        <div class="product-actions">
+                            <button class="btn">Comprar</button>
+                            <button class="btn btn-outline">Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="plantio">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1551650992-ee4fd47df41f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80');"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Plantadeira EcoSeed 3000</h3>
+                        <p>Plantadeira de precisão com sistema de economia de sementes e fertilizantes.</p>
+                        <div class="product-price">R$ 152.300,00</div>
+                        <div class="product-actions">
+                            <button class="btn">Comprar</button>
+                            <button class="btn btn-outline">Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="colheita">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1593692909680-1e7a16f9a0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Colheitadeira EcoHarvest</h3>
+                        <p>Colheitadeira com tecnologia de redução de perdas e baixo consumo energético.</p>
+                        <div class="product-price">R$ 389.900,00</div>
+                        <div class="product-actions">
+                            <button class="btn">Comprar</button>
+                            <button class="btn btn-outline">Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="sobre">
+        <div class="container">
+            <h2>Sobre a EcoAgro Brasil</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Fundada em 2010, a EcoAgro Brasil nasceu com a missão de transformar a agricultura brasileira através de soluções sustentáveis e tecnológicas.</p>
+                    <p>Nossa visão é ser referência nacional em equipamentos agrícolas ecologicamente responsáveis, contribuindo para uma agricultura mais produtiva e menos impactante ao meio ambiente.</p>
+                    <p>Com mais de 12 anos de experiência, já ajudamos mais de 1.500 propriedades rurais a reduzirem seu impacto ambiental enquanto aumentam sua produtividade.</p>
+                    <p>Nossos valores são baseados em inovação, sustentabilidade, responsabilidade social e parceria com o agricultor brasileiro.</p>
+                    <a href="#contato" class="btn" style="margin-top: 20px;">Conheça nossa história</a>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Equipe EcoAgro Brasil">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section class="sustainability" id="sustentabilidade">
+        <div class="container">
+            <h2>Compromisso com a Sustentabilidade</h2>
+            <p>Na EcoAgro Brasil, a sustentabilidade está no centro de tudo o que fazemos. Desenvolvemos tecnologias que reduzem o impacto ambiental da agricultura sem comprometer a produtividade.</p>
+            
+            <div class="sustainability-stats">
+                <div class="stat-item">
+                    <div class="stat-number">+35%</div>
+                    <div class="stat-label">Economia de água</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">-40%</div>
+                    <div class="stat-label">Redução de emissões</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">+1200</div>
+                    <div class="stat-label">Clientes satisfeitos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15k+</div>
+                    <div class="stat-label">Hectares impactados</div>
+                </div>
+            </div>
+            
+            <p>Trabalhamos constantemente para inovar e trazer ao mercado soluções que ajudem os agricultores a produzir mais com menos recursos naturais.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contato">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <div>
+                            <h3>Endereço</h3>
+                            <p>Av. das Nações, 2000 - Zona Rural<br>Campinas - SP, 13070-178</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <div>
+                            <h3>Telefone</h3>
+                            <p>(19) 3456-7890<br>(19) 98765-4321 (WhatsApp)</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>contato@ecoagrobrasil.com.br<br>vendas@ecoagrobrasil.com.br</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock contact-icon"></i>
+                        <div>
+                            <h3>Horário de Funcionamento</h3>
+                            <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <select id="subject" required>
+                                <option value="">Selecione...</option>
+                                <option value="vendas">Informações sobre Produtos</option>
+                                <option value="suporte">Suporte Técnico</option>
+                                <option value="parcerias">Parcerias Comerciais</option>
+                                <option value="outros">Outros Assuntos</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>EcoAgro Brasil</h3>
+                    <p>Soluções sustentáveis para agricultura moderna, unindo tecnologia e responsabilidade ambiental.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Produtos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Tratores Ecológicos</a></li>
+                        <li><a href="#">Sistemas de Irrigação</a></li>
+                        <li><a href="#">Equipamentos de Plantio</a></li>
+                        <li><a href="#">Máquinas de Colheita</a></li>
+                        <li><a href="#">Acessórios e Peças</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Úteis</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Sustentabilidade</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Financiamento</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Inscreva-se para receber nossas novidades e promoções.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu melhor email" required>
+                        <button type="submit" class="btn">Inscrever</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 EcoAgro Brasil. Todos os direitos reservados. CNPJ: 12.345.678/0001-90
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Filtro de produtos
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remover classe active de todos os botões
+                filterBtns.forEach(b => b.classList.remove('active'));
+                
+                // Adicionar classe active ao botão clicado
+                btn.classList.add('active');
+                
+                // Filtrar produtos
+                const filter = btn.getAttribute('data-filter');
+                const products = document.querySelectorAll('.product-card');
+                
+                products.forEach(product => {
+                    if (filter === 'all' || product.getAttribute('data-category') === filter) {
+                        product.style.display = 'block';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Acessibilidade - Alto Contraste
+        const contrastBtn = document.getElementById('contrastBtn');
+        
+        contrastBtn.addEventListener('click', () => {
+            document.body.classList.toggle('high-contrast');
+            // Alterar ícone
+            if (document.body.classList.contains('high-contrast')) {
+                contrastBtn.innerHTML = '<i class="fas fa-adjust"></i>';
+                contrastBtn.setAttribute('title', 'Contraste Normal');
+            } else {
+                contrastBtn.innerHTML = '<i class="fas fa-adjust"></i>';
+                contrastBtn.setAttribute('title', 'Alto Contraste');
+            }
+        });
+        
+        // Acessibilidade - Aumentar Fonte
+        const fontSizeBtn = document.getElementById('fontSizeBtn');
+        
+        fontSizeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('large-text');
+            // Alterar ícone
+            if (document.body.classList.contains('large-text')) {
+                fontSizeBtn.innerHTML = '<i class="fas fa-text-height"></i>';
+                fontSizeBtn.setAttribute('title', 'Texto Normal');
+            } else {
+                fontSizeBtn.innerHTML = '<i class="fas fa-text-height"></i>';
+                fontSizeBtn.setAttribute('title', 'Aumentar Texto');
+            }
+        });
+        
+        // Formulário de contato
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Validação básica
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            if (name && email) {
+                // Simulação de envio
+                alert('Obrigado por entrar em contato, ' + name + '! Sua mensagem foi enviada com sucesso.');
+                contactForm.reset();
+            } else {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+            }
+        });
+        
+        // Scroll suave para âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
