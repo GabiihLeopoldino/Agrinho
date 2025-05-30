@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoAgro Brasil - Soluções Sustentáveis para Agricultura</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
     <style>
         :root {
             --primary: #2E7D32;
@@ -43,7 +44,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Open Sans', sans-serif;
             background-color: var(--background);
             color: var(--text);
             line-height: 1.6;
@@ -56,6 +57,7 @@
         }
 
         h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             line-height: 1.2;
             color: var(--primary-dark);
@@ -119,6 +121,7 @@
             border: none;
             cursor: pointer;
             text-align: center;
+            font-size: 0.9rem;
         }
 
         .btn:hover {
@@ -258,6 +261,7 @@
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
         .hero h1 {
@@ -271,6 +275,13 @@
             font-size: 1.2rem;
             margin-bottom: 2rem;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
         /* Features Section */
@@ -327,6 +338,7 @@
             border-radius: 30px;
             cursor: pointer;
             transition: var(--transition);
+            font-size: 0.9rem;
         }
 
         .filter-btn.active, .filter-btn:hover {
@@ -347,6 +359,8 @@
             overflow: hidden;
             box-shadow: 0 4px 12px var(--shadow);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
         }
 
         .product-card:hover {
@@ -356,13 +370,16 @@
 
         .product-img {
             height: 200px;
-            background-color: #f0f0f0;
             background-size: cover;
             background-position: center;
+            background-color: #f0f0f0;
         }
 
         .product-info {
             padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-title {
@@ -381,6 +398,7 @@
             display: flex;
             justify-content: space-between;
             gap: 10px;
+            margin-top: auto;
         }
 
         /* About Section */
@@ -406,6 +424,11 @@
             width: 100%;
             height: auto;
             display: block;
+            transition: var(--transition);
+        }
+
+        .about-img img:hover {
+            transform: scale(1.03);
         }
 
         /* Sustainability Section */
@@ -641,6 +664,11 @@
             .hero {
                 height: 70vh;
             }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -653,7 +681,7 @@
                 <div class="logo-text">Eco<span>Agro</span> Brasil</div>
             </div>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu">
                 <i class="fas fa-bars"></i>
             </button>
             
@@ -732,7 +760,7 @@
             </div>
             <div class="products-grid">
                 <div class="product-card" data-category="tratores">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1605553041888-8c0a8f4b5d9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1605553041888-8c0a8f4b5d9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');" aria-label="Trator EcoPower 450"></div>
                     <div class="product-info">
                         <h3 class="product-title">Trator EcoPower 450</h3>
                         <p>Trator de alta eficiência com motor biodiesel e sistema de economia de combustível.</p>
@@ -744,7 +772,7 @@
                     </div>
                 </div>
                 <div class="product-card" data-category="irrigacao">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1586771107445-d3ca888129fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');"></div>
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1586771107445-d3ca888129fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');" aria-label="Sistema IrrigaSmart"></div>
                     <div class="product-info">
                         <h3 class="product-title">Sistema IrrigaSmart</h3>
                         <p>Sistema de irrigação inteligente com sensores de umidade e controle por aplicativo.</p>
@@ -756,7 +784,7 @@
                     </div>
                 </div>
                 <div class="product-card" data-category="plantio">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1551650992-ee4fd47df41f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80');"></div>
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1551650992-ee4fd47df41f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80');" aria-label="Plantadeira EcoSeed 3000"></div>
                     <div class="product-info">
                         <h3 class="product-title">Plantadeira EcoSeed 3000</h3>
                         <p>Plantadeira de precisão com sistema de economia de sementes e fertilizantes.</p>
@@ -768,11 +796,59 @@
                     </div>
                 </div>
                 <div class="product-card" data-category="colheita">
-                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1593692909680-1e7a16f9a0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1593692909680-1e7a16f9a0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');" aria-label="Colheitadeira EcoHarvest"></div>
                     <div class="product-info">
                         <h3 class="product-title">Colheitadeira EcoHarvest</h3>
                         <p>Colheitadeira com tecnologia de redução de perdas e baixo consumo energético.</p>
                         <div class="product-price">R$ 389.900,00</div>
+                        <div class="product-actions">
+                            <button class="btn">Comprar</button>
+                            <button class="btn btn-outline">Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="tratores">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1633158829875-e5316a358c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');" aria-label="Trator Compacto EcoFarm 200"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Trator Compacto EcoFarm 200</h3>
+                        <p>Trator versátil para pequenas propriedades, com tecnologia de economia de combustível.</p>
+                        <div class="product-price">R$ 128.500,00</div>
+                        <div class="product-actions">
+                            <button class="btn">Comprar</button>
+                            <button class="btn btn-outline">Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="irrigacao">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1622286342621-4bd786c2447c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');" aria-label="Sistema IrrigaDrop"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Sistema IrrigaDrop</h3>
+                        <p>Sistema de irrigação por gotejamento com economia de até 50% no consumo de água.</p>
+                        <div class="product-price">R$ 45.800,00</div>
+                        <div class="product-actions">
+                            <button class="btn">Comprar</button>
+                            <button class="btn btn-outline">Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="plantio">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1551650972-9c9a6b9b8591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');" aria-label="Plantadeira Precisão 500"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Plantadeira Precisão 500</h3>
+                        <p>Plantadeira compacta para culturas diversificadas com sistema de precisão.</p>
+                        <div class="product-price">R$ 92.700,00</div>
+                        <div class="product-actions">
+                            <button class="btn">Comprar</button>
+                            <button class="btn btn-outline">Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-category="colheita">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1617103996702-96ff29b1c467?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');" aria-label="Colheitadeira GrãoMaster"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Colheitadeira GrãoMaster</h3>
+                        <p>Especializada em grãos com sistema de limpeza e armazenamento integrado.</p>
+                        <div class="product-price">R$ 325.000,00</div>
                         <div class="product-actions">
                             <button class="btn">Comprar</button>
                             <button class="btn btn-outline">Detalhes</button>
